@@ -8,8 +8,8 @@
 To design a half subtractor and full subtractor circuit and verify its truth table in Quartus using Verilog programming.
 
 ## Equipments Required:
-## Hardware – PCs, Cyclone II , USB flasher
-## Software – Quartus prime
+  Hardware – PCs, Cyclone II , USB flasher
+  Software – Quartus prime
 ## Theory
 Subtractor circuits take two binary numbers as input and subtract one binary number input from the other binary number input. Similar to adders, it gives out two outputs, difference and borrow (carry-in the case of Adder). There are two types of subtractors.
 
@@ -58,43 +58,44 @@ Diff = A ⊕ B ⊕ Bin B = A'Bin + A'B + BBin
 
 
 ## Program:
-Half Subtractor:
-
+# Half Subtractor:
+```
 module halfsub(diff,carry,a,b);
 input a,b;
 output diff,carry;
 xor(diff,a,b);
 assign carry=(~a)&b;
 endmodule
-
-Full subtractor:
-
+```
+# Full subtractor:
+```
 module fullsub(diff,carry,a,b,c);
 input a,b,c;
 output diff,carry;
 xor(diff,a,b,c);
 assign carry= (~a)&c | (~a)&b | (b&c);
 endmodule
-
+```
 ## Truthtable
-Half Subractor:
+# Half Subractor:
 ![image](https://github.com/ramanpiritha/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147084116/849cd880-52d6-4524-8a07-89e889e913b1)
 
-Full subractor:
+# Full subractor:
 ![image](https://github.com/ramanpiritha/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147084116/41b6ee34-a091-4717-91d5-568ce0fd8202)
 
 
 ##  RTL realization
-Half Subractor:
+# Half Subractor:
 ![image](https://github.com/ramanpiritha/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147084116/2940f32e-ea00-4310-9c91-c322fe2c693c)
 
-Full Subractor:
+# Full Subractor:
 ![image](https://github.com/ramanpiritha/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147084116/e66c55c5-2d15-4b31-b0d8-3cf73f285f9f)
 
 ## Timing diagram 
-Half Subractor:
+# Half Subractor:
 ![image](https://github.com/ramanpiritha/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147084116/ab2846f9-1a27-4a18-a308-954b1e0acbf3)
-Full Subractor:
+
+# Full Subractor:
 ![image](https://github.com/ramanpiritha/Experiment--03-Half-Subtractor-and-Full-subtractor/assets/147084116/165b83ad-5d40-4b00-92c9-1b6fd54aad90)
 
 
